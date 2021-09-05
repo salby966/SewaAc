@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/tailwind.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/release/v5.11.2/css/all.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer>
+    </script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Document</title>
+</head>
+<style>
+    @-webkit-keyframes up-down{
+        0%{
+            transform: translateY(10px);
+        }
+        100%{
+            transform: translateY(-10px);
+        }
+    }
+    @keyframes up-down{
+        0%{
+            transform: translateY(10px);
+        }
+        100%{
+            transform: translateY(-10px);
+        }
+    }
+    @keyframes left-right{
+        0%{
+            transform: translateX(20px);
+        }
+        100%{
+            transform: translateX(-20px);
+        }
+    }
+
+    .carousel-open:cheked+.carousel-item{
+        position: static;
+        opacity: 100;
+    }
+
+    .carousel-item{
+        -webkit-transition: opacity 0.6s ease-out;
+        transition: opacity 0.6s ease-out;
+    }
+
+    #carousel-1:checked~.control-1,
+    #carousel-2:checked~.control-2,
+    #carousel-3:checked~.control-3{
+        display: block;
+    }
+    .carousel-indicators{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: 2%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 10;
+    }
+
+    #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+    #carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+    #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
+       color : #2b6cb0; 
+    }
+</style>
+<body>
+
+<!--Nav-->
+<nav x-data="{show:false}" class="w-full bg-white fixed shadow z-10">
+    <div class="container mx-auto px-3 py-3 lg:px-20 flex items-center justify-between flex-wrap">
+        <div class="flex items-center flex-shrink-0 text-green-700 mr-6">
+            <h1 class="font-bold text-4xl tracking-tight">SewaAC.co.id</h1>
+        </div>
+        <div class="block md:hidden">
+            <button @click="show=!show"
+                class="flex items-center px-3 py-2 border rounded text-gray-600 border-gray-600">
+                <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
+                    <title>menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div>
+        <div @click.away="show = false" :class="{ 'block': show, 'hidden': !show }"
+            class="w-full block flex-grow md:flex md:justify-end md:w-auto">
+            <div>
+                <a href="#"
+                    class="block md:inline-block text-2xl px-1 lg:px-3 py-2 leading-none rounded text-green-700 font-bold mt-4 md:mt-0">Beranda</a>
+                <a href="#"
+                    class="block md:inline-block text-2xl px-1 lg:px-3 py-2 leading-none rounded text-green-700 font-bold mt-4 md:mt-0">Layanan</a>
+                <a href="#"
+                    class="block md:inline-block text-2xl px-1 lg:px-3 py-2 leading-none rounded text-green-700 font-bold mt-4 md:mt-0">Produk</a>
+                <a href="#"
+                    class="block md:inline-block text-2xl px-1 lg:px-3 mr-4 py-2 leading-none rounded text-green-700 font-bold mt-4 md:mt-0">Keunggulan</a>
+                    <a href="#"
+                    class="block md:inline-block text-2xl px-1 lg:px-3 mr-4 py-2 leading-none rounded text-green-700 font-bold mt-4 md:mt-0">Kontak</a>
+                <a href="#"
+                    class="border block md:inline-block text-2xl px-6 py-3 leading-none rounded-tl-3xl rounded-br-3xl bg-gray-400 hover:text-gray-100 hover:bg-gray-500 mt-4 md:mt-0 tarnsition duration-300 font-bold text-green-700">Hubungi Kami</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--Welcome-->
+<div class="container mx-auto px-3 py-3 lg:px-20 p-6">
+    <div class="flex z-0" style="height: 24rem;">
+        <div class="lg:w-1/2 mt-24 pt-20">
+            <h2 class="text-black-700 text-3xl font-bold leading-tight">Penyedia Layanan AC Terbaik</h2>
+            <h2 class="text-green-700 text-3xl font-bold leading-tight">di Nusantara</h2>
+            <p class="text-black-700 text-2xl pt-5">Tetap Nyaman di ruangan Anda, Kami akan memberikan layanan terbaik untuk pendingin ruangan Anda
+            </p>
+            <div class="flex mt-10">
+                <button type="button" class="flex items-center text-white text-bold rounded-full bg-green-700 hover:bg-gray-500 font-semibold px-8 py-2 focus:outline-none mr-4">
+                Kunjungi Kami</button>
+            </div>
+        </div>
+        <div class="border-t-2 border-fuchsia-600">
+            <div class="-mt-12 pt-10">
+                <img src="/public/img/Head Image.png" class="relative py-24" style="z-index:-2; animation: up-down 2s ease-in-out" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Layanan-->
+<div class="pt-72">
+    <span><h1 class="text-center font-bold text-3xl pb-16">Layanan Terbaik Kami</h1></span>
+        <img src="/public/img/Dots.png" class="w-10px h-4" alt="">
+</div>
+<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+    <!--Card 1-->
+    <div class="rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="/public/img/sewa_pendingin.png">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2 text-center">Sewa Pendingin</div>
+        <p class="text-gray-700 text-base text-center">
+          Kami memberikan solusi pendingin bagi rumah ataupun kantor
+        </p>
+      </div>
+    </div>
+    <!--Card 2-->
+    <div class="rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="/public/img/servis_rutin.png">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2 text-center">Servis Rutin</div>
+        <p class="text-gray-700 text-base text-center">
+          Menjaga AC Anda tetap bersih dari kuman dan debu
+        </p>
+      </div>
+    </div>
+
+    <!--Card 3-->
+    <div class="rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="/public/img/perbaikan.png">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2 text-center">Perbaikan Unit</div>
+        <p class="text-gray-700 text-base text-center">
+          Membuat AC Anda bekerja secara maksimal
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--produk-->
+<div class="container mx-12 p-10">
+    <div class="flex flex-justify-between">
+    <div>
+        <h1 class="text-3xl font-bold">Sesuaikan Produk Dengan Kebutuhan Anda</h1>
+        <h3 class="pt-6 text-1xl"></h3>Berbagai variasi produk untuk kebutuhan perusahaan Anda</h3>
+        <ul class="list-disc pt-4 px-7">
+            <li>Single Split | Multi Split | Air Purifer</li>
+            <li>VRV Home Series | Multi NX-32</li>
+            <li>Sky Air | VRV Control System</li>
+        </ul> 
+    </div>
+    <div>
+        <img src="/public/img/1.png" alt="">
+    </div>
+    </div>
+</div>
+
+<!--keunggulan-->
+<h1 class="font-bold text-3xl p-10">Kenapa Memilih Kami</h1>
+<div class="p-20 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-3">
+    <div>
+        <img src="/public/img/servis.png" alt="">
+    </div>
+    <div class="">
+        <p class="text-right text-3xl font-bold">Servis Rutin Tiap Bulan</p>
+        <p>Anda tidak perlu lagi hawatir lupa servis tiap bulan, tim kami akan mengingatkan Anda sehingga Ac Anda akan terhindar dari kuman dan debu</p>
+    </div>
+    <div>
+        <p class="text-3xl font-bold">Unit Ganti Baru</p>
+        <p>Jika unit masaih dalam masa garansi akan kami ganti dengan unit yang baru tidak perlu khawatir dengan biaya tambahan lainnya</p>
+    </div>
+    <div>
+        <img src="/public/img/unit_baru.png" alt="">
+    </div>
+    <div>
+        <img src="/public/img/call_center.png" alt="">
+    </div>
+    <div>
+        <p class="text-right text-3xl font-bold">Bantuan 24/7</p>
+        <p class="text-right text-1xl">Hubungi kami kapanpun Anda membutuhkan, karena Kami akan selalu ada untuk Anda</p>
+    </div>
+</div>
+
+<!--cabang-->
+<div class="pt-10">
+    <span><h1 class="text-center font-bold text-3xl">Kami Hadir Di Kota-Kota Besar</h1></span>
+</div>
+<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+    <!--Card Jakarta-->
+    <div class="rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110" >
+        <p style="position: absolute; top: 20px; z-index: 2; color: #fff; place-items: center;" class="text-5xl font-bold">Jakarta</p>
+        <img class="w-full" style="position: relative; z-index: 1; top: 0px;" src="/public/img/jakarta.png">
+    </div>
+    <!--Card Medan-->
+    <div class="rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110">
+        <img class="w-full" src="/public/img/1.png">
+    </div>
+    <!--Card Bali-->
+    <div class="rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110">
+        <img class="w-full" src="/public/img/bali.png">
+    </div>
+    <!--Card Surabaya-->
+    <div class="rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110">
+        <img class="w-full" src="/public/img/surabaya.png">
+    </div>
+    <!--Card Makasar-->
+    <div class="rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110">
+        <img class="w-full" src="/public/img/makasar.png">
+    </div>
+    <!--Card Yogyakarta-->
+    <div class="rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110">
+        <img class="w-full" src="/public/img/yogyakarta.png">
+    </div>
+</div>
+
+<!--kontak-->
+<div class="p-10 grid grid-cols-2 sm:grid-cols-1 md:grid-cols- lg:grid-cols-2 xl:grid-cols-2 gap-5">
+    <div>
+    <div class="p-3">
+        <p class="text-4xl font-bold text-green-700 text-center">Kontak Kami</p>
+        <p class="text-3xl font-bold text-center">Alamat</p>
+        <p class="text-center">komp. Ruko 135, No.A6-A7, Jl. Pangeran Jayakarta, RT.7/RW.7, Mangga Dua Sel., Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibu Kota Jakarta 10730</p>
+        <p class="font-bold text-center">Punya Pertanyaan silahan Hubungi Kami</p>
+    </div>
+    <form action="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+            <label for="nama" class="block text-black-700 text-sm font-bold mb-2">
+                Nama Lengkap
+                <input type="text" class="shadow apperance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nama" placeholder="Nama Lengkap">
+            </label>
+            <div class="mb-6">
+                <label for="email" class="block text0gray-700 text-sm font-bold mb-2">Email</label>
+                <input type="text" class="shadow apperance-none border-black-700 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="email" placeholder="Example@gmail.com">
+            </div>
+            <div class="mb-6">
+                <label for="pesan" class="block text-black-700 text-sm font-bold mb-2" >Pesan</label>
+            <textarea class="shadow apperance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="pesan" placeholder="ada yang ingin Anda Sampaikan?"></textarea>
+            </div>
+        </div>
+        <button class="bg-blue-500 hover:blue-700 text-white font-bold py-2 px-4 rounded">Kirim</button>
+    </form>
+</div class="p-10 grid grid-cols-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+    <div class="border-t-2 border-red-500 shadow-lg">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1 m12!1m3!1d3966.9028605773956!2d106.82925191413689!3d-6.143748661936098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5f0446849bf%3A0x3f0461ea474813d2!2sPT.%20STHIRA%20NUSANTARA!5e0!3m2!1sid!2sid!4v1630635223790!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+</div>
+</div>
+</div>
+<!--footer-->
+    <div class="" style="background-color: #059669;">
+    <div class="container mx-auto px-6 lg:px-20 py-12">
+        <div class="lg:flex">
+            <div class="w-full lg:w-2/3">
+                <div class="lg:flex">
+                    <div class="w-full mb-12 lg:mb-0 lg:w-1/2">
+                        <h2 class="font-bold text-xl text-gray-100 mb-4">SewaAC.co.id</h2>
+                        <p class="text-white-700 font-bold">Rasakan Dinginnya Ruangan Anda Sekarang</p>
+                        <div class="flex mt-6">
+                            <i style="background-color: #3B5998;" 
+                                class="flex items-center justify-center h-12 w-12 mr-1 rounded-full fab fill-current text-white text-xl fa-facebook-f"></i>
+                            <i style="background-color: #dd4d39;" 
+                                class="flex items-center justify-center h-12 w-12 mx-1 rounded-full fas fill-current text-white text-xl fa-envelope"></i>
+                            <i style="background-color:#125688" 
+                                class="flex items-center justify-center h-12 w-12 mx-1 rounded-full fab fill-current text-white text-xl fa-instagram"></i>
+                            <i style="background-color:#55ACEE" 
+                                class="flex items-center justify-center h-12 w-12 mx-1 rounded-full fab fill-current text-white text-xl fa-twitter"></i>
+                         </div>
+                    </div>
+                <div class="w-full lg:w-1/2 lg:flex lg:px-6">
+                    <div class="w-full mb-6 lg:mb-0 lg:w-1/2">
+                        <h2 class="font-bold text-white-100 mb-4">
+                            Menu Utama
+                        </h2>
+                        <ul class="text-black-500 text-sm">
+                            <li class="pt-1 pb-2">Beranda</li>
+                            <li class="pt-1 pb-2">Layanan</li>
+                            <li class="pt-1 pb-2">Produk</li>
+                            <li class="pt-1 pb-2">Keunggulan</li>
+                            <li class="pt-1 pb-2">Kontak</li>
+                        </ul>
+                    </div>
+                    <div class="w-full mb-6 lg:mb-0 lg:w-1/2">
+                        <h2 class="font-bold text-white-100 mb-4">Layanan dan Produk</h2>
+                        <ul class="text-black-500 text-sm">
+                            <li class="pt-1 pb-2">Sewa AC</li>
+                            <li class="pt-1 pb-2">Servis dan Perawatan</li>
+                            <li class="pt-1 pb-2">Perbaikan Unit</li>
+                            <li class="pt-1 pb-2">Garansi produk</li>
+                            <li class="pt-1 pb-2">Call Center 24/7</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="w-full lg:w-1/3">
+                    <h2 class="font-bold text-gray-100 mb-4">
+                        Berita
+                    </h2>
+                    <div class="text-white-500 mb-8">
+                        Langganan Berita Mingguan Kami  untuk mendapatkan berita terbaru
+                    </div>
+                    <div class="flex">
+                        <input type="text" class="rounded-1 px-2 focus:outline-none">
+                        <button class="text-white-500 rounded-r hover:bg-blue-500 px-4 py-2 focus:outline-none" style="background-color: #dc0900;">Kirim
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Footer Bottom-->
+    <div class="" style="background-color: #047857;">
+        <div class="container mx-auto px-6 lg:px-20 py-6">
+            <div class="flex justify-center text-gray-500 mb-1">
+                @ 2021 <span class="font-bold">SewaAC.co.id</span> 2021 All right reserved
+            </div>
+            <div class="flex font-light justify-center text-white-200 text-sm">
+                <p>Design by <span class="font-bold">....</span></p>
+            </div>
+        </div>
+    </div>
+<!--carousel-->
+  <script>
+        $(document).ready(function(){
+        $('.carousel.carousel-slider').carousel({fullwidth: true});
+    })
+  </script>
+</body>
+</html>

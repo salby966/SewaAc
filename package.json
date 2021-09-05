@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "build-css": "npx tailwindcss -i ./css/styles.css -o public/css/tailwind.css"
+  }
+}
