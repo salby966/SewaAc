@@ -4,8 +4,58 @@
 
 @tailwind utilities;
 
-@layer components {
-    .btn {
-      @apply px-4 py-2 bg-blue-600 text-white rounded;
+@layer components{
+    .btn{
+        @apply px-4 py-2 bg-blue-600 text-white rounded;
     }
-  }
+}
+
+.my-element{
+    display: inline block;
+    margin: 0 0.5rem;
+
+    animation: fadeInLeft;
+    animation: fadeInRight;
+    animation: zoomIn;
+    animation-duration :10s;
+}
+.animate__animated.animate__fadeInRight{
+    --animate-duration :2s;
+}
+:root{
+    --animate-duration:800ms;
+    --animate-delay: 0.9s;
+}
+.animate__animated.animate__fadeInLeft{
+    --animate-duration :10s;
+}
+:root{
+    --animate-duration:800ms;
+    --animated-delay: 1s;
+}
+.animate__animated.animate__zoomIn{
+    --animate-duration: 2s;
+}
+:root{
+    --animate-duration:800ms;
+    --animated-delay:2s;
+}
+.scroll-animations{
+    display :flex;
+}
+.scroll-animations div{
+    flex-grow:1;
+    padding: 30px;
+    text-align: center;
+    opacity: 0;
+    color : #333;
+}
+.scroll-animations div span{
+    font-size: 4em;
+    color : #5AA9E0;
+}
+.scroll-animations div h3{
+    font-size:1.9em;
+    font-weight: 400;
+    margin-bottom:10px;
+}
