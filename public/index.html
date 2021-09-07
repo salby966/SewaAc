@@ -36,7 +36,7 @@
             $("#slider-3").fadeOut(400);
             $("#slider-1").delay(400).fadeIn(400);
             $("#sButton2").removeClass("bg-yellow-800");
-            $("sButton3").removeClass("bg-yellow-800")
+            $("#sButton3").removeClass("bg-yellow-800");
             $("#sButton1").addClass("bg-yellow-800");
            
         cont=2;
@@ -51,7 +51,7 @@
             $("#slider-3").delay(400).fadeIn(400);
             $("#sButton2").removeClass("bg-yellow-800");
             $("#sButton1").removeClass("bg-yellow-800");
-            $("#sButton3").addClass("bg-yellow-800")
+            $("#sButton3").addClass("bg-yellow-800");
            
         cont=0;
         
@@ -106,9 +106,9 @@
     }
 
     $(window).ready(function(){
-        $("#slider-3").hide();
         $("#slider-2").hide();
         $("#sButton1").addClass("bg-green-800");
+        $('#slider-3').hide();
         
         loopSlider();
     });
@@ -116,55 +116,7 @@
 <!--Akhir Slider Gambar-->
 
 <!--scroll Animation-->
-<script>
-    $(document).ready(function()
-    {
-        function isScrolledIntoView(elem){
-            var docViewTop = $(window).scrollTop();
-            var docViewBottom = docViewTop + $(window).height();
-            var elemTop = $(elem).offset().top;
-            var elemBottom = elemTop + $(elem).height();
-
-            return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-        }
-
-        $(window).scroll(function(){
-            $('.scroll-animations.animated').each(function(){
-                if(isScrolledIntoView(this) === true){
-                    $(this).addClass('zoomIn');
-                }
-            });
-        });
-
-        $('button').on('click',function(){
-            if($('#name').val === ''){
-                $('#name').addClass('form-error animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-        $(this).removeClass('animated shake');
-      });
-    } else {
-      $('#email').removeClass('form-error');
-    }
-
-    // Check message textarea
-    if ($('#message').val() === '') {
-      $('#message').addClass('form-error animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-        $(this).removeClass('animated shake');
-      });
-    } else {
-      $('#message').removeClass('form-error');
-    }
-
-  });
-  
-  // Activate hinge effect when h4 is click in last section
-  $('.funky-animations h4').on('click', function() {
-    $(this).addClass('animated hinge').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-        $(this).removeClass('animated hinge');
-      });
-  });
-});
-</script>
-    <title>Document</title>
+<title>Document</title>
 </head>
 <style>
     @-webkit-keyframes up-down{
@@ -183,9 +135,50 @@
             transform: translateY(-10px);
         }
     }
+
+    @keyframes slide-in-left{
+        0%{
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-in-right{
+        0%{
+            transform: translateX(100px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateX(100px);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-in-bottom{
+        0%{
+            transform: translateY(50px);
+            opacity: 1;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-in{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
 </style>
 <body>
-
 <!--Nav-->
 <nav x-data="{show:false}" class="w-full bg-white fixed shadow z-10">
     <div class="container mx-auto px-3 py-3 lg:px-20 flex items-center justify-between flex-wrap">
@@ -220,70 +213,111 @@
         </div>
     </div>
 </nav>
-<!--Welcome-->
-<div class="container mx-auto px-3 py-3 lg:px-20 p-6">
-    <div class="flex z-0" style="height: 24rem;">
-        <div class="lg:w-1/2 mt-24 pt-20">
-            <h2 class="text-black-700 xl:text-3xl md:text-2xl font-bold leading-tight">Penyedia Layanan AC Terbaik</h2>
-            <h2 class="text-green-700 xl:text-3xl md:text-2xl font-bold leading-tight">di Nusantara</h2>
-            <p class="text-black-700 xl:text-2xl pt-5">Tetap Nyaman di ruangan Anda, Kami akan memberikan layanan terbaik untuk pendingin ruangan Anda
-            </p>
-            <div class="flex mt-10">
-                <button type="button" class="flex items-center md:text-1xl xl:text-2xl text-white text-bold rounded-full bg-green-700 hover:bg-gray-500 font-semibold px-8 py-2 focus:outline-none mr-4">
-                Kunjungi Kami</button>
+
+<!--Baru-->
+<section>
+<div class="top-0 w-full h-screen md:h-bg-center bg-cover" style="background-image: url('/public/img/bg-green.png');">
+    <div class="container mx-auto px-3 py-3 lg:px-20 p-6">
+        <div class="flex justify-between">
+            <div class="lg:w-1/2 xl:w-1/2 xl:pt-40 mt-24 md:pt-20">
+                <h2 class="text-gray-100 xl:text-5xl md:text-2xl font-bold leading-tight">Penyedia <strong class="text-green-300 filter drop-shadow-lg">Layanan AC</strong> Terbaik</h2>
+                <h2 class="text-green-300 stroke-current stroke-2 xl:text-5xl md:text-2xl font-bold leading-tight">di Nusantara</h2>
+                <p class="text-gray-200 xl:text-3xl md:text-2xl pt-10">Tetap Nyaman di ruangan Anda, Kami akan memberikan layanan terbaik untuk pendingin ruangan Anda
+                </p>
+                <div class="flex mt-10 xl:pt-4 md:pt-0">
+                    <button type="button" class="flex items-center md:text-1xl xl:text-2xl text-white text-bold rounded-full hover:bg-gray-500 font-semibold px-8 py-2 focus:outline-none mr-4" style="background-color: #00BE8D;">
+                    Kunjungi Kami</button>
+                </div>
             </div>
-        </div>
-        <div class="border-t-2 border-fuchsia-600">
-            <div class="-mt-12 pt-10">
-                <img src="/public/img/Head Image.png" class="relative py-24" style="z-index:-2; animation: up-down 2s ease-in-out" alt="">
+            <div class="relative flex pt-32">
+                <img src="/public/img/Head.png" style="width: 100%; height: 100%;" alt="">
             </div>
         </div>
     </div>
 </div>
-
+</section>
 <!--Layanan-->
-<div class="md:pt-14 xl:pt-96">
-    <span><h1 class="text-center font-bold xl:text-3xl md:text-2xl pb-16">Layanan Terbaik Kami</h1></span>
-</div>
-<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-    <!--Card 1-->
-    <div class="rounded overflow-hidden shadow-lg">
-      <img class="w-full" src="/public/img/sewa_pendingin.png">
-      <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2 text-center">Sewa Pendingin</div>
-        <p class="text-gray-700 text-base text-center">
-          Kami memberikan solusi pendingin bagi rumah ataupun kantor
-        </p>
-      </div>
-    </div>
-    <!--Card 2-->
-    <div class="rounded overflow-hidden shadow-lg">
-      <img class="w-full" src="/public/img/servis_rutin.png">
-      <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2 text-center">Servis Rutin</div>
-        <p class="text-gray-700 text-base text-center">
-          Menjaga AC Anda tetap bersih dari kuman dan debu
-        </p>
-      </div>
-    </div>
 
-    <!--Card 3-->
-    <div class="rounded overflow-hidden shadow-lg">
-      <img class="w-full" src="/public/img/perbaikan.png">
-      <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2 text-center">Perbaikan Unit</div>
-        <p class="text-gray-700 text-base text-center">
-          Membuat AC Anda bekerja secara maksimal
-        </p>
+<section>
+<h1 class="md:text-2xl xl:text-4xl font-bold text-center pt-14 pb-8">Layanan terbaik Kami</h1>
+<div class="flex items-start md:space-x-10">
+    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+        
+        <!--Card 1-->
+        <div class="rounded overflow-hidden shadow-lg">
+          <img class="w-full" src="/public/img/sewa_pendingin.png">
+          <div class="px-6 py-4">
+            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center">Sewa Pendingin</div>
+            <p class="text-gray-700 md:text-base xl:text-2xl text-center">
+              Kami memberikan solusi pendingin bagi rumah ataupun kantor
+            </p>
+          </div>
+        </div>
+
+        <!--Card 2-->
+        <div class="rounded overflow-hidden shadow-lg">
+          <img class="w-full" src="/public/img/servis_rutin.png">
+          <div class="px-6 py-4">
+            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center">Servis Rutin</div>
+            <p class="text-gray-700 md:text-base xl:text-2xl text-center">
+              Menjaga AC Anda tetap bersih dari kuman dan debu
+            </p>
+          </div>
+        </div>
+    
+        <!--Card 3-->
+        <div class="rounded overflow-hidden shadow-lg">
+          <img class="w-full" src="/public/img/perbaikan.png">
+          <div class="px-6 py-4">
+            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center">Perbaikan Unit</div>
+            <p class="text-gray-700 md:text-base xl:text-2xl text-center">
+              Membuat AC Anda bekerja secara maksimal
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+</div>
+</section>
+
+
+<!--keunggulan-->
+<h1 class="md:text-2xl xl:text-4xl font-bold text-center pt-8">Kenapa Memilih Kami</h1>
+<div class="p-16 pr-28 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+    <div class="flex">
+        <img src="/public/img/servis.png" class="animate__animated animate__fadeInLeft animate__delay-1s pl-24" style="width: 30rem;" alt="">
+    </div>
+    <div class="animate__animated animate__fadeInRight animate__delay-2s">
+        <p class="md:text-2xl xl:text-4xl font-bold pb-5">Servis Rutin Tiap Bulan</p>
+        <p class="md:text-1xl xl:text-2xl space-y-3 pr-24">Anda tidak perlu lagi hawatir lupa servis tiap bulan, tim kami akan mengingatkan Anda sehingga Ac Anda akan terhindar dari kuman dan debu</p>
+    </div>
+    <div class="flex">
+        <img src="/public/img/unit_baru.png" class="animate__animated animate__fadeInLeft animate__delay-1s pl-24" style="width: 25rem;" alt="">
+    </div>
+    <div class="animate__animated animate__fadeInRight animate__delay-2s">
+        <p class="md:text-2xl xl:text-4xl font-bold pb-5">Unit Ganti Baru</p>
+        <p class="md:text-1xl xl:text-2xl space-y-3 pr-24">Jika unit masaih dalam masa garansi akan kami ganti dengan unit yang baru tidak perlu khawatir dengan biaya tambahan lainnya</p>
+    </div>
+    <div class="flex">
+        <img src="/public/img/call_center.png" class="animate__animated animate__fadeInLeft animate__delay-1s pl-24" style="width: 25rem;" alt="">
+    </div>
+    <div class="animate__animated animate__fadeInRight animate__delay-2s">
+        <p class="md:text-2xl xl:text-4xl font-bold pb-5">Bantuan 24/7</p>
+        <p class="xl:text-2xl text-1xl space-y-3 pr-24">Hubungi kami kapanpun Anda membutuhkan, karena Kami akan selalu ada untuk Anda</p>
+    </div>
+    <div class="flex">
+        <img src="/public/img/unit_baru.png" class="animate__animated animate__fadeInLeft animate__delay-1s pl-24" style="width: 25rem;" alt="">
+    </div>
+    <div class="animate__animated animate__fadeInRight animate__delay-2s">
+        <p class="md:text-2xl xl:text-4xl font-bold pb-5">Garansi AC Dingin</p>
+        <p class="md:text-1xl xl:text-2xl space-y-3 pr-24">Tidak hanya unit yang Kami garansikan, tapi Kami menggaransikan AC tetap dingin untuk kenyamanan Anda di ruangan</p>
+    </div>
 </div>
 
 <!--produk-->
-<div class="sliderAX h-auto">
+
     <div id="slider-1" class="container mx-auto">
-        <div class="bg-cover bg-center h-auto text-white font-bold py-24 px-10 object-fill" style="background-image: url(/public/img/office-room.png);">
+        <div class="bg-cover bg-top text-white font-bold flex items-center object-fill" style="background-image: url(/public/img/office-room.png); height: 32rem">
             <div class="w-full">
                 <p class="text-3xl pl-14">Sesuaikan Produk Dengan Kebutuhan Anda</p>
                 <p class="pt-7 pl-14">Berbagai Variasi produk untuk kebutuhan perusahaan anda</p>
@@ -297,7 +331,7 @@
         <br>
     </div>
     <div id="slider-2" class="container mx-auto">
-        <div class="bg-cover bg-top h-auto text-white font-bold py-24 px-10 object-fill" style="background-image: url(/public/img/company.png) ;">
+        <div class="bg-cover bg-top text-white font-bold flex items-center object-fill" style="background-image: url(/public/img/company.png); height: 32rem">
             <div class="w-full">
             <p class="text-3xl pl-14">Sesuaikan Produk Dengan Kebutuhan Anda</p>
                 <p class="pt-7 pl-14">Berbagai Variasi produk untuk kebutuhan perusahaan anda</p>
@@ -311,7 +345,7 @@
         <br>
     </div>
     <div id="slider-3" class="container mx-auto">
-        <div class="bg-cover bg-top h-auto text-white font-bold py-24 px-10 object-fill" style="background-image: url(/public/img/living-room.png) ;">
+        <div class="bg-cover bg-top text-white font-bold flex items-center object-fill" style="background-image: url(/public/img/living-room.png); height: 32rem">
             <div class="w-full">
             <p class="text-3xl pl-14">Sesuaikan Produk Dengan Kebutuhan Anda</p>
                 <p class="pt-7 pl-14">Berbagai Variasi produk untuk kebutuhan perusahaan anda</p>
@@ -324,73 +358,48 @@
         </div><!--container-->
         <br>
     </div>
-</div>
+
 <div class="flex justify-between w-16 mx-auto pb-12 space-x-4">
     <button id="sButton1" onclick="sliderButton1()" class="bg-green-400 rounded-full w-8 pb-2"></button>
     <button id="sButton2" onclick="sliderButton2()" class="bg-green-400 rounded-full w-8 pb-2"></button>
     <button id="sButton3" onclick="sliderButton3()" class="bg-green-400 rounded-full w-8 pb-2"></button>
 </div>
 
-<!--keunggulan-->
-<h1 class="md:text-2xl xl:text-4xl font-bold text-center pt-8">Kenapa Memilih Kami</h1>
-<div class="p-14 pr-28 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-0">
-    <div>
-        <img src="/public/img/servis.png" class="animate__animated animate__fadeInLeft animate__delay-1s" alt="">
-    </div>
-    <div class="animate__animated animate__fadeInRight animate__delay-1s">
-        <p class="md:text-2xl xl:text-4xl font-bold pb-5">Servis Rutin Tiap Bulan</p>
-        <p class="md:text-1xl xl:text-2xl space-y-3">Anda tidak perlu lagi hawatir lupa servis tiap bulan, tim kami akan mengingatkan Anda sehingga Ac Anda akan terhindar dari kuman dan debu</p>
-    </div>
-    <div>
-        <img src="/public/img/unit_baru.png" class="animate__animated animate__fadeInLeft animate__delay-2s" alt="">
-    </div>
-    <div class="animate__animated animate__fadeInRight animate__delay-2s">
-        <p class="md:text-2xl xl:text-4xl font-bold pb-5">Unit Ganti Baru</p>
-        <p class="md:text-1xl xl:text-2xl space-y-3">Jika unit masaih dalam masa garansi akan kami ganti dengan unit yang baru tidak perlu khawatir dengan biaya tambahan lainnya</p>
-    </div>
-    <div class="">
-        <img src="/public/img/call_center.png" class="animate__animated animate__fadeInLeft animate__delay-3s" alt="">
-    </div>
-    <div class="animate__animated animate__fadeInRight animate__delay-3s">
-        <p class="md:text-2xl xl:text-4xl font-bold pb-5">Bantuan 24/7</p>
-        <p class="xl:text-2xl text-1xl space-y-3">Hubungi kami kapanpun Anda membutuhkan, karena Kami akan selalu ada untuk Anda</p>
-    </div>
-</div>
 
 <!--cabang-->
 <div class="pt-10">
     <span><h1 class="text-center font-bold md:text-2xl xl:text-3xl">Kami Hadir Di Kota-Kota Besar</h1></span>
 </div>
-<div class="Scroll-animations p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+<div class="flex p-14 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-10">
     <!--Card Jakarta-->
     <div class="animated rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="text-3xl font-bold text-center">Jakarta</p>
-        <img class="w-full" style="position: relative; z-index: 1; top: 0px;" src="/public/img/jakarta.png">
+        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="border-2 rounded-full md:text-3xl font-bold text-center">Jakarta</p>
+        <img class="w-full hover:opacity-25" src="/public/img/city.png">
     </div>
     <!--Card Medan-->
     <div class="animated rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="text-3xl font-bold text-center">Medan</p>
-        <img class="w-full" src="/public/img/1.png">
+        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="border-2 rounded-full md:text-3xl font-bold text-center"><a href="#">Medan</a></p>
+        <img class="w-full" src="/public/img/city.png">
     </div>
     <!--Card Bali-->
     <div class="animated rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="text-3xl font-bold text-center">Bali</p>
-        <img class="w-full" src="/public/img/bali.png">
+        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="border-2 rounded-full md:text-3xl font-bold text-center">Bali</p>
+        <img class="w-full" src="/public/img/city.png">
     </div>
     <!--Card Surabaya-->
     <div class="animated rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="text-3xl font-bold text-center">Surabaya</p>
-        <img class="w-full" src="/public/img/surabaya.png">
+        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="border-2 rounded-full md:text-3xl font-bold text-center">Surabaya</p>
+        <img class="w-full" src="/public/img/city.png">
     </div>
     <!--Card Makasar-->
     <div class="animated rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="text-3xl font-bold text-center">Makasar</p>
-        <img class="w-full" src="/public/img/makasar.png">
+        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="border-2 rounded-full md:text-3xl font-bold text-center">Makasar</p>
+        <img class="w-full" src="/public/img/city.png">
     </div>
     <!--Card Yogyakarta-->
     <div class="animated rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-110 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="text-3xl font-bold text-center">Yogyakarta</p>
-        <img class="w-full" src="/public/img/yogyakarta.png">
+        <p style="position: absolute; top:100px; left: 0; width: 100%; height: 50px; z-index: 2; color: #fff;" class="border-2 rounded-full md:text-3xl font-bold text-center">Yogyakarta</p>
+        <img class="w-full" src="/public/img/city.png">
     </div>
 </div>
 

@@ -10,6 +10,27 @@
     }
 }
 
+@media (min-width : 640px){
+
+}
+
+@media (min-width: 768px){
+
+}
+
+@media (min-width: 1024px){
+
+}
+
+@media (min-width: 1280px){
+
+}
+
+@media (min-width: 1536px){
+
+}
+
+
 .my-element{
     display: inline block;
     margin: 0 0.5rem;
@@ -58,4 +79,21 @@
     font-size:1.9em;
     font-weight: 400;
     margin-bottom:10px;
+}
+
+//scroll https://webdesign.tutsplus.com/tutorials/animate-on-scroll-with-javascript--cms-36671
+.scrolled . fade-in{
+    animation: fade-in 1s ease-in-out both;
+}
+
+.scrolled.fade-in-bottom{
+    animation: fade-in-bottom 1s ease-in-out both;
+}
+
+.scrolled.slide-left{
+    animation: slide-in-left 1s ease-in-out both;
+}
+
+.scrolled.slide-right{
+    animation: slide-in-right 1s ease-in-out both;
 }
