@@ -1,5 +1,8 @@
 {
   "scripts": {
-    "build-css": "npx tailwindcss -i ./css/styles.css -o public/css/tailwind.css"
+    "build-css": "npx tailwindcss -i ./css/styles.css -o ./public/css/tailwind.css"
+  },
+  "dependencies": {
+    "aos": "^2.3.4"
   }
 }

@@ -634,7 +634,7 @@ video {
   }
 }
 
-.btn {
+.btn{
   border-radius: 0.25rem;
   --tw-bg-opacity: 1;
   background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
@@ -17801,6 +17801,10 @@ video {
   background-image: linear-gradient(to top left, var(--tw-gradient-stops));
 }
 
+.bg-green-pattern {
+  background-image: url(/public/img/bg-green.png);
+}
+
 .from-transparent {
   --tw-gradient-from: transparent;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -32254,6 +32258,84 @@ video {
 
 .content-none {
   content: none;
+}
+
+@media (min-width : 640px){
+}
+
+@media (min-width: 768px){
+}
+
+@media (min-width: 1024px){
+}
+
+@media (min-width: 1280px){
+}
+
+@media (min-width: 1536px){
+}
+
+.my-element{
+  display: inline block;
+  margin: 0 0.5rem;
+  -webkit-animation: fadeInLeft;
+          animation: fadeInLeft;
+  -webkit-animation: fadeInRight;
+          animation: fadeInRight;
+  -webkit-animation: zoomIn;
+          animation: zoomIn;
+  -webkit-animation-duration :10s;
+          animation-duration :10s;
+}
+
+.animate__animated.animate__fadeInRight{
+  --animate-duration :2s;
+}
+
+:root{
+  --animate-duration:800ms;
+  --animate-delay: 0.9s;
+}
+
+.animate__animated.animate__fadeInLeft{
+  --animate-duration :10s;
+}
+
+:root{
+  --animate-duration:800ms;
+  --animated-delay: 1s;
+}
+
+.animate__animated.animate__zoomIn{
+  --animate-duration: 2s;
+}
+
+:root{
+  --animate-duration:800ms;
+  --animated-delay:2s;
+}
+
+.scroll-animations{
+  display :flex;
+}
+
+.scroll-animations div{
+  flex-grow:1;
+  padding: 30px;
+  text-align: center;
+  opacity: 0;
+  color : #333;
+}
+
+.scroll-animations div span{
+  font-size: 4em;
+  color : #5AA9E0;
+}
+
+.scroll-animations div h3{
+  font-size:1.9em;
+  font-weight: 400;
+  margin-bottom:10px;
 }
 
 @media (min-width: 640px) {
@@ -49378,6 +49460,10 @@ video {
 
   .sm\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .sm\:bg-green-pattern {
+    background-image: url(/public/img/bg-green.png);
   }
 
   .sm\:from-transparent {
@@ -80607,6 +80693,10 @@ video {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
+  .md\:bg-green-pattern {
+    background-image: url(/public/img/bg-green.png);
+  }
+
   .md\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -111832,6 +111922,10 @@ video {
 
   .lg\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .lg\:bg-green-pattern {
+    background-image: url(/public/img/bg-green.png);
   }
 
   .lg\:from-transparent {
@@ -143061,6 +143155,10 @@ video {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
+  .xl\:bg-green-pattern {
+    background-image: url(/public/img/bg-green.png);
+  }
+
   .xl\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -174286,6 +174384,10 @@ video {
 
   .\32xl\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .\32xl\:bg-green-pattern {
+    background-image: url(/public/img/bg-green.png);
   }
 
   .\32xl\:from-transparent {
