@@ -27,6 +27,12 @@ module.exports = {
       'next': '400px',
     },
 
+    fontFamily: {
+      'display': ['Poppins', 'system-ui', 'sans-serif'],
+      'body': ['Poppins', 'system-ui', 'sans-serif'],
+      'Glory': ['Glory'],
+    },
+
     extend: {
       backgroundImage: theme => ({
         'green-pattern' : "url(/public/img/bg-green.png)",

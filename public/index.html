@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Glory:wght@100&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/release/v5.11.2/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer>
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <!--Slider Gambar-->
     <script>
@@ -20,10 +25,8 @@
         {
         case 0:{
             $("#slider-1").fadeOut(400);
-            $("#slider-3").fadeOut(400);
             $("#slider-2").delay(400).fadeIn(400);
             $("#sButton1").removeClass("bg-yellow-800");
-            $("#sButton3").removeClass("bg-yellow-800");
             $("#sButton2").addClass("bg-yellow-800");
         cont=1;
         
@@ -33,31 +36,14 @@
         {
             
             $("#slider-2").fadeOut(400);
-            $("#slider-3").fadeOut(400);
             $("#slider-1").delay(400).fadeIn(400);
             $("#sButton2").removeClass("bg-yellow-800");
-            $("#sButton3").removeClass("bg-yellow-800");
             $("#sButton1").addClass("bg-yellow-800");
-           
-        cont=2;
-        
-        break;
-        }
-
-        case 2:
-        {
-            $("#slider-1").fadeOut(400);
-            $("#slider-2").fadeOut(400);
-            $("#slider-3").delay(400).fadeIn(400);
-            $("#sButton2").removeClass("bg-yellow-800");
-            $("#sButton1").removeClass("bg-yellow-800");
-            $("#sButton3").addClass("bg-yellow-800");
            
         cont=0;
         
         break;
         }
-        
         
         }},8000);
 
@@ -70,10 +56,8 @@
 
     function sliderButton1(){
     
-    $("#slider-3").fadeOut(400);
     $("#slider-2").fadeOut(400);
     $("#slider-1").delay(400).fadeIn(400);
-    $("#sButton3").removeClass("bg-green-800");
     $("#sButton2").removeClass("bg-green-800");
     $("#sButton1").addClass("bg-green-800");
     reinitLoop(4000);
@@ -84,38 +68,24 @@
     function sliderButton2(){
 
     $("#slider-1").fadeOut(400);
-    $("#slider-3").fadeOut(400);
     $("#slider-2").delay(400).fadeIn(400);
     $("#sButton1").removeClass("bg-green-800");
-    $("#sButton3").removeClass("bg-green-800");
     $("#sButton2").addClass("bg-green-800");
     reinitLoop(4000);
     cont=1
-    
-    }
-    function sliderButton3(){
-    $("#slider-1").fadeOut(400);
-    $("#slider-2").fadeOut(400);
-    $("#slider-3").delay(400).fadeIn(400);
-    $("#sButton2").removeClass("bg-green-800");
-    $("#sButton1").removeClass("bg-green-800");
-    $("#sButton3").addClass("bg-green-800");
-    reinitLoop(4000);
-    cont=2
     
     }
 
     $(window).ready(function(){
         $("#slider-2").hide();
         $("#sButton1").addClass("bg-green-800");
-        $('#slider-3').hide();
         
         loopSlider();
     });
+
   </script>
 <!--Akhir Slider Gambar-->
 
-<!--scroll Animation-->
 <title>Document</title>
 </head>
 <style>
@@ -136,56 +106,14 @@
         }
     }
 
-    @keyframes slide-in-left{
-        0%{
-            transform: translateX(-100px);
-            opacity: 0;
-        }
-        100%{
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes slide-in-right{
-        0%{
-            transform: translateX(100px);
-            opacity: 0;
-        }
-        100%{
-            transform: translateX(100px);
-            opacity: 1;
-        }
-    }
-
-    @keyframes fade-in-bottom{
-        0%{
-            transform: translateY(50px);
-            opacity: 1;
-        }
-        100%{
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes fade-in{
-        0%{
-            opacity: 0;
-        }
-        100%{
-            opacity: 1;
-        }
-    }
 </style>
 <body>
 <!--Nav-->
-<section id="beranda">
-<div class="top-0 w-full h-screen md:h-bg-center bg-cover bg-green-pattern">
-<nav x-data="{show:false}" class="w-full z-10">
-    <div class="container mx-auto px-3 py-3 lg:px-20 flex items-center justify-between flex-wrap">
+
+<nav x-data="{show:false}" class="w-full z-10" style="background-color: #268C72; position: fixed;">
+    <div class="container mx-auto px-3 py-2 lg:px-20 flex items-center justify-between flex-wrap">
         <div class="flex items-center flex-shrink-0 text-green-700 mr-6">
-            <h1 class="font-bold xl:text-5xl lg:text-3xl md:text-2xl  tracking-tight text-white">SewaAC.co.id</h1>
+            <h1 class="font-bold xl:text-4xl lg:text-3xl md:text-2xl  tracking-tight text-white">SewaAC.co.id</h1>
         </div>
         <div class="block lg:hidden">
             <button @click="show=!show"
@@ -208,22 +136,21 @@
                 <a href="#cabang"
                     class="block lg:inline-block lg:text-1xl px-1 xl:px-3 xl:text-2xl py-2 leading-none rounded text-white hover:text-green-200 font-bold mt-4 lg:mt-0">Kantor Cabang</a>
                 <a href="#kontak"
-                    class="block lg:inline-block lg:text-1xl px-1 xl:px-3 xl:text-2xl py-2 leading-none rounded text-white hover:text-green-200 font-bold mt-4 lg:mt-0">Kontak</a>
-                <a href="#"
-                    class="border block lg:inline-block lg:text-1xl xl:text-2xl px-6 py-3 leading-none rounded-tl-3xl rounded-br-3xl bg-gray-300 hover:text-gray-100 hover:bg-gray-400 mt-4 md:mt-0 tarnsition duration-300 font-bold text-green-700">Hubungi Kami</a>
+                    class="border block inline-block lg:text-1xl xl:text-2xl px-6 py-3 leading-none rounded-tl-3xl rounded-br-3xl bg-gray-300 hover:text-gray-100 hover:bg-gray-400 mt-4 md:mt-0 tarnsition duration-300 font-bold text-green-700">Hubungi Kami</a>
             </div>
         </div>
     </div>
 </nav>
 
 <!--Hero-->
-
+<section id="beranda"></section>
+<div class="top-0 pt-20 w-full h-screen bg-cover bg-green-pattern">
     <div class="container mx-auto px-3 py-3 lg:px-20 p-6">
         <div class="xl:flex md:grid xl:justify-between md:grid-cols-1">
             <div class="xl:w-1/2 xl:pt-40 xl:mt-24 lg:pt-20 md:pt-3">
-                <h2 class="text-white xl:text-5xl md:text-4xl font-bold leading-tight">Penyedia <strong class="text-green-300 filter drop-shadow-lg">Layanan AC</strong> Terbaik <strong class="text-green-300">di Nusantara</strong></h2>
-                <p class="text-white xl:text-3xl md:text-2xl md:text-center xl:text-left pt-5">Tetap Nyaman di ruangan Anda, Kami akan memberikan <strong>layanan terbaik</strong> untuk pendingin ruangan Anda</p>
-                <div class="flex md:place-content-center xl:place-content-end mt-10 xl:pt-4 md:pt-0">
+                <h2 class="text-white xl:text-5xl md:text-4xl font-bold leading-tight" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="500">Penyedia <strong class="text-green-300 filter drop-shadow-lg">Layanan AC</strong> Terbaik <strong class="text-green-300">di Nusantara</strong></h2>
+                <p class="text-white xl:text-3xl md:text-2xl md:text-center xl:text-left pt-5" data-aos="fade-up" data-aos-duration="2500" data-aos-offset="500">Tetap Nyaman di ruangan Anda, Kami akan memberikan <strong>layanan terbaik</strong> untuk pendingin ruangan Anda</p>
+                <div class="flex md:place-content-center xl:place-content-end mt-10 xl:pt-4 md:pt-0" data-aos="flip-right" data-aos-duration="3000">
                     <button type="button" class="flex items-center md:text-1xl xl:text-2xl text-white text-bold rounded-full font-semibold px-8 py-2 mr-4 bg-green-400 hover:bg-green-700">
                     Kunjungi Kami</button>
                 </div>
@@ -233,46 +160,52 @@
             </div>
         </div>
     </div>
-</section>
 </div>
+</section>
 
 <!--Layanan-->
 <section id="layanan">
-    <h1 class="md:text-2xl xl:text-4xl font-bold text-center pt-24">Layanan terbaik <strong class="text-green-700">Kami</strong></h1>
+    <h1 class="md:text-2xl xl:text-4xl font-bold text-center md:pt-14 xl:pt-24">Layanan terbaik <strong class="text-green-700">Kami</strong></h1>
 <div class="flex items-start md:space-x-10">
-    <div class="p-36 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+    <div class="p-10 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-7">
         
         <!--Card 1-->
+        <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300">
         <div class="rounded overflow-hidden shadow-xl">
           <img class="w-full" src="/public/img/sewa_pendingin.png">
           <div class="px-6 py-4">
-            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center font-mono">Sewa Pendingin</div>
-            <p class="text-gray-700 md:text-md xl:text-1xl font-sans text-center">
+            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center font-Glory">Sewa Pendingin</div>
+            <p class="text-gray-700 md:text-md xl:text-1xl text-center">
               Kami memberikan solusi pendingin bagi rumah ataupun kantor. Kami memberikan pelayanan berupa pemasangan AC di tempat Anda, cepat dan tepat sesuai kebutuhan Anda.
             </p>
           </div>
         </div>
+        </div>
 
         <!--Card 2-->
+        <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300">
         <div class="rounded overflow-hidden shadow-xl">
           <img class="w-full" src="/public/img/servis_rutin.png">
           <div class="px-6 py-4">
-            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center font-mono">Servis Rutin</div>
-            <p class="text-gray-700 md:text-md xl:text-1xl font-sans text-center">
-              Untuk dapat tetap menjaga Ac Anda tetap dingin, Kami juga menyediakan pelayanan berupa perawatan rutin, sehingga AC Anda tetap terawat dengan baik dan menjaga AC Anda tetap bersih dari kuman dan debu
+            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center font-Poppins">Servis Rutin</div>
+            <p class="text-gray-700 md:text-md xl:text-1xl font-poppins text-center">
+            Kami menyediakan pelayanan berupa perawatan rutin, sehingga AC Anda tetap terawat dengan baik dan menjaga AC Anda tetap bersih dari kuman dan debu.
             </p>
           </div>
         </div>
+        </div>
     
         <!--Card 3-->
+        <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300">
         <div class="rounded overflow-hidden shadow-xl">
           <img class="w-full" src="/public/img/perbaikan.png">
           <div class="px-6 py-4">
-            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center font-mono">Servis pelanggan</div>
-            <p class="text-gray-700 md:text-base xl:text-1xl font-sans text-center">
-              Kami melayani Anda 7x24 jam, demi menjaga AC Anda tetap dingin dan sihingga Anda dapat merasa nyaman di rumah ataupun kantor
+            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center font-Poppins">Servis pelanggan</div>
+            <p class="text-gray-700 md:text-base xl:text-1xl font-poppins text-center">
+              Kami memberikan pelayanan terbaik 7x24 jam, demi menjaga AC Anda tetap dingin dan sehingga Anda dapat merasa nyaman di rumah ataupun kantor
             </p>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -282,7 +215,7 @@
 <!--produk-->
 
 <div id="slider-1" class="container mx-auto">
-    <div class="bg-cover bg-top text-white font-bold flex items-center object-fill" style="background-image: url(/public/img/office-room.png); height: 42rem">
+    <div class="bg-cover bg-top text-white font-bold flex items-center object-fill" style="background-image: url(/public/img/living-room.png); height: 38rem;">
         <div class="w-full">
             <p class="text-4xl pl-14 text-center">Sesuaikan Produk Dengan Kebutuhan Anda</p>
             <p class="pt-7 pl-14 text-center text-2xl">Berbagai Variasi produk untuk kebutuhan perusahaan anda</p>
@@ -296,21 +229,7 @@
     <br>
 </div>
 <div id="slider-2" class="container mx-auto">
-    <div class="bg-cover bg-top text-white font-bold flex items-center object-fill" style="background-image: url(/public/img/company.png); height: 42rem">
-        <div class="w-full">
-        <p class="text-4xl pl-14 text-center">Sesuaikan Produk Dengan Kebutuhan Anda</p>
-            <p class="pt-7 pl-14 text-center text-2xl">Berbagai Variasi produk untuk kebutuhan perusahaan anda</p>
-            <ul class="list-inside md:pt-3 md:pl-14 font-bold text-center text-2xl">
-                <li>Single Split | Multi Split | Air Purifer</li>
-                <li>VRV Home Series | Multi NX-32</li>
-                <li>Sky Air | VRV Control System</li>
-            </ul>
-        </div>
-    </div><!--container-->
-    <br>
-</div>
-<div id="slider-3" class="container mx-auto">
-    <div class="bg-cover bg-top text-white font-bold flex items-center object-fill" style="background-image: url(/public/img/living-room.png); height: 42rem">
+    <div class="bg-cover bg-top text-white font-bold flex items-center object-fill" style="background-image: url(/public/img/company.png); height: 38rem">
         <div class="w-full">
         <p class="text-4xl pl-14 text-center">Sesuaikan Produk Dengan Kebutuhan Anda</p>
             <p class="pt-7 pl-14 text-center text-2xl">Berbagai Variasi produk untuk kebutuhan perusahaan anda</p>
@@ -326,33 +245,33 @@
 
 <!--keunggulan-->
 <section id="keunggulan">
-<h1 class="md:text-2xl xl:text-4xl font-bold text-center pt-8">Kenapa Memilih Kami</h1>
+<h1 class="md:text-2xl xl:text-4xl font-bold text-center md:pt-14 xl:pt-24">Kenapa Memilih Kami</h1>
 <div class="p-16 pr-28 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 xl:gap-10 place-content-center">
-    <div class="">
-        <img src="/public/img/servis.png" class="animate__animated animate__fadeInLeft animate__delay-1s pl-24" style="width: 30rem;" alt="">
+    <div data-aos="fade-right" data-aos-duration="3000">
+        <img src="/public/img/servis.png" class="pl-24" style="width: 30rem;" alt="">
     </div>
-    <div class="animate__animated animate__fadeInRight animate__delay-2s">
+    <div data-aos="fade-left" data-aos-duration="3000">
         <p class="md:text-1xl xl:text-2xl font-bold pb-3">Servis Rutin Tiap Bulan</p>
         <p class="md:text-md xl:text-1xl text-justify">Anda tidak perlu lagi hawatir lupa servis tiap bulan, tim kami akan mengingatkan Anda sehingga Ac Anda akan terhindar dari kuman dan debu</p>
     </div>
-    <div class="">
-        <img src="/public/img/unit-baru.png" class="animate__animated animate__fadeInLeft animate__delay-1s pl-24" style="width: 25rem;" alt="">
+    <div data-aos="fade-right" data-aos-duration="3000">
+        <img src="/public/img/unit-baru.png" class="pl-24" style="width: 25rem;" alt="">
     </div>
-    <div class="animate__animated animate__fadeInRight animate__delay-2s">
+    <div data-aos="fade-left" data-aos-duration="3000">
         <p class="md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Unit Ganti Baru</p>
         <p class="md:text-md xl:text-1xl text-justify">Jika unit masaih dalam masa garansi akan kami ganti dengan unit yang baru tidak perlu khawatir dengan biaya tambahan lainnya</p>
     </div>
-    <div class="">
-        <img src="/public/img/call_center.png" class="animate__animated animate__fadeInLeft animate__delay-1s pl-24" style="width: 25rem;" alt="">
+    <div data-aos="fade-right" data-aos-duration="3000">
+        <img src="/public/img/call_center.png" class="pl-24" style="width: 25rem;" alt="">
     </div>
-    <div class="animate__animated animate__fadeInRight animate__delay-2s">
+    <div data-aos="fade-left" data-aos-duration="3000">
         <p class="md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Bantuan 24/7</p>
         <p class="md:text-md xl:text-1xl text-justify">Hubungi kami kapanpun Anda membutuhkan, karena Kami akan selalu ada untuk Anda</p>
     </div>
-    <div class="">
-        <img src="/public/img/unit-baru.png" class="animate__animated animate__fadeInLeft animate__delay-1s pl-24" style="width: 25rem;" alt="">
+    <div data-aos="fade-right" data-aos-duration="3000">
+        <img src="/public/img/unit-baru.png" class="pl-24" style="width: 25rem;" alt="">
     </div>
-    <div class="animate__animated animate__fadeInRight animate__delay-2s">
+    <div data-aos="fade-left" data-aos-duration="3000">
         <p class="md:text-1xl xl:text-2xl font-bold pb-3">Garansi AC Dingin</p>
         <p class="md:text-md xl:text-1xl">Tidak hanya unit yang Kami garansikan, tapi Kami menggaransikan AC tetap dingin untuk kenyamanan Anda di ruangan</p>
     </div>
@@ -361,73 +280,83 @@
 
 <!--cabang-->
 <section id="cabang">
-<div class="pt-10">
+<div class="md:pt-14 xl:pt-24">
     <span><h1 class="text-center font-bold md:text-2xl xl:text-3xl">Kami Hadir Di Kota-Kota Besar</h1></span>
 </div>
 <div class="flex p-14 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-10">
     <!--Card Jakarta-->
-    <div class="animated scroll-animations scr rounded overflow-hidden shadow-lg transform hover:-translate-y-1 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color:rgba(156, 96, 233, 0.767); font-size: 3rem; text-align: center; font-weight: bold;"><a href="#">Jakarta</a></p>
-        <img class="w-full" src="/public/img/sewa-ac-1.PNG">
+    <div data-aos="zoom-in" data-aos-duration="2000">
+    <div class="rounded shadow-lg transform hover:-translate-y-1 overscroll-auto cursor-pointer">
+        <p class="xl:text-7xl md:text-5xl" style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color:rgba(156, 96, 233, 0.767); text-align: center; font-weight: bold;"><a href="#">Jakarta</a></p>
+        <img class="w-full hover:opacity-25" src="/public/img/sewa-ac-1.PNG">
+    </div>
     </div>
     <!--Card Medan-->
-    <div class="animated rounded overflow-hidden shadow-lg transform hover:-translate-y-1 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color: rgb(201, 97, 57); font-size: 3rem; text-align: center; font-weight: bold;"><a href="#">Medan</a></p>
-        <img class="w-full" src="/public/img/sewa-ac-2.PNG">
+    <div data-aos="zoom-in" data-aos-duration="2000">
+    <div class="rounded shadow-lg transform hover:-translate-y-1 overscroll-auto cursor-pointer">
+        <p class="xl:text-7xl md:text-5xl" style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color: rgb(201, 97, 57); text-align: center; font-weight: bold;"><a href="#">Medan</a></p>
+        <img class="w-full hover:opacity-25" src="/public/img/sewa-ac-2.PNG">
+    </div>
     </div>
     <!--Card Bali-->
-    <div class="animated rounded overflow-hidden shadow-lg transform hover:-translate-y-1 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color: rgba(131, 142, 240, 0.877); font-size: 3rem; text-align: center; font-weight: bold;">Bali</p>
-        <img class="w-full" src="/public/img/sewa-ac-3.PNG">
+    <div data-aos="zoom-in" data-aos-duration="2000">
+        <div class="rounded shadow-lg transform hover:-translate-y-1 overscroll-auto cursor-pointer">
+        <p class="xl:text-7xl md:text-5xl" style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color: rgba(131, 142, 240, 0.877); text-align: center; font-weight: bold;">Bali</p>
+        <img class="w-full hover:opacity-25" src="/public/img/sewa-ac-3.PNG">
+    </div>
     </div>
     <!--Card Surabaya-->
-    <div class="animated rounded overflow-hidden shadow-lg transform hover:-translate-y-1 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color: rgb(48, 185, 219); font-size: 3rem; text-align: center; font-weight: bold;">Surabaya</p>
-        <img class="w-full" src="/public/img/sewa-ac-4.PNG">
+    <div data-aos="zoom-in" data-aos-duration="2000">
+    <div class="rounded shadow-lg transform hover:-translate-y-1 overscroll-auto cursor-pointer">
+        <p class="xl:text-7xl md:text-5xl" style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color: rgb(48, 185, 219); text-align: center; font-weight: bold;">Surabaya</p>
+        <img class="w-full hover:opacity-25" src="/public/img/sewa-ac-4.PNG">
+    </div>
     </div>
     <!--Card Makasar-->
-    <div class="animated rounded overflow-hidden shadow-lg transform hover:-translate-y-1 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color: rgb(35, 151, 145); font-size: 3rem; text-align: center; font-weight: bold;">Makasar</p>
-        <img class="w-full" src="/public/img/sewa-ac-5.PNG">
+    <div data-aos="zoom-in" data-aos-duration="2000">
+        <div class="rounded shadow-lg transform hover:-translate-y-1 overscroll-auto cursor-pointer">
+        <p class="xl:text-7xl md:text-5xl" style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color: rgb(35, 151, 145); text-align: center; font-weight: bold;">Makasar</p>
+        <img class="hover:opacity-25 w-full" src="/public/img/sewa-ac-5.PNG">
+    </div>
     </div>
     <!--Card Yogyakarta-->
-    <div class="animated rounded overflow-hidden shadow-lg transform hover:-translate-y-1 animate__animated animate__zoomIn animate__delay-2s show-on-scroll">
-        <p style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color: #fff; font-size: 3rem; text-align: center; font-weight: bold;">Yogyakarta</p>
-        <img class="w-full" src="/public/img/sewa-ac-6.PNG">
+    <div data-aos="zoom-in" data-aos-duration="2000">
+    <div class="rounded shadow-lg transform hover:-translate-y-1 overscroll-auto cursor-pointer">
+        <p class="xl:text-7xl md:text-5xl" style="position: absolute; top: 20px; left: 0; width: 100%; height: 100px; color: rgb(216, 64, 64); text-align: center; font-weight: bold;">Yogyakarta</p>
+        <img class="w-full hover:opacity-25" src="/public/img/sewa-ac-6.PNG">
+    </div>
     </div>
 </div>
 </section>
 
 <!--kontak-->
 <section id="kontak">
-<div class="p-10 grid grid-cols-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+<div class="p-10 md:pt-14 xl:pt-24 grid grid-cols-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5">
     <div>
     <div class="p-3">
         <p class="md:text-2xl xl:text-4xl font-bold text-black text-center">Kontak Kami</p>
-        <p class="md:text-2xl xl:text-3xl font-bold text-green-700 text-center p-3">Alamat</p>
+        <p class="md:text-2xl xl:text-3xl font-bold text-green-700 text-center p-2">Alamat</p>
         <p class="text-center">komp. Ruko 135, No.A6-A7, Jl. Pangeran Jayakarta, RT.7/RW.7, Mangga Dua Sel., Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibu Kota Jakarta 10730</p>
         <p class="font-bold text-center p-3">Punya Pertanyaan silahan Hubungi Kami</p>
     </div>
-    <form action="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <div class="mb-4">
-            <label for="nama" class="block text-black-700 text-sm font-bold mb-2">
-                Nama Lengkap
+    <form class="bg-white px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+            <label for="nama" class="block text-black-700 text-sm font-bold mb-2">Nama Lengkap</label>
                 <input type="text" class="border-2 rounded w-full py-2 px-3 text-gray-700 leading-tight" id="nama" placeholder="Nama Lengkap">
-            </label>
-            <div class="mb-6">
+            </div>
+            <div class="mb-4">
                 <label for="email" class="block text0gray-700 text-sm font-bold mb-2">Email</label>
-                <input type="text" class="border-2 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="email" placeholder="Example@gmail.com">
+                <input type="text" class="border-2 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" placeholder="Example@gmail.com">
             </div>
-            <div class="mb-6">
+            <div class="mb-4">
                 <label for="pesan" class="block text-black-700 text-sm font-bold mb-2" >Pesan</label>
-            <textarea class="border-2 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="pesan" placeholder="ada yang ingin Anda Sampaikan?"></textarea>
+                <textarea class="border-2 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="pesan" placeholder="ada yang ingin Anda Sampaikan?"></textarea>
             </div>
-        </div>
-        <button class="bg-blue-500 hover:blue-700 text-white font-bold py-2 px-4 rounded">Kirim</button>
+            <button type="submit" class="bg-blue-500 hover:blue-700 text-white font-bold py-2 px-4 rounded">Kirim</button>
     </form>
 </div class="p-10 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5">
-    <div class="border-t-2 border-red-500 shadow-lg md:h-full">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1 m12!1m3!1d3966.9028605773956!2d106.82925191413689!3d-6.143748661936098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5f0446849bf%3A0x3f0461ea474813d2!2sPT.%20STHIRA%20NUSANTARA!5e0!3m2!1sid!2sid!4v1630635223790!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 100%;" loading="lazy">
+    <div class="border-t-2 border-red-500 shadow-lg">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.7257076835634!2d106.83089342921527!3d-6.143752666319732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5f0446849bf%3A0x3f0461ea474813d2!2sPT.%20STHIRA%20NUSANTARA!5e0!3m2!1sid!2sid!4v1631157153916!5m2!1sid!2sid"  allowfullscreen="" loading="lazy" style="border:0; width: 100%; height: 100%;">
         </iframe>
     </div>
 </div>
@@ -436,28 +365,24 @@
 </section>
 
 <!--footer-->
-    <div class="" style="background-color: #059669;">
+    <div class="" style="background-color: #0b916f;">
     <div class="container mx-auto px-6 lg:px-20 py-12">
         <div class="lg:flex">
-            <div class="w-full lg:w-2/3">
+            <div class="w">
                 <div class="lg:flex">
-                    <div class="w-full mb-12 lg:mb-0 lg:w-1/2">
+                    <div class="w-full mb-4 lg:mb-0 lg:w-1/2">
                         <h2 class="font-bold md:text-3xl xl:text-4xl text-gray-100 mb-4">SewaAC.co.id</h2>
                         <p class="text-gray-100 md:text-2xl xl:text-3xl font-bold">Rasakan Dinginnya Ruangan Anda Sekarang</p>
                         <div class="flex mt-6">
-                            <i style="background-color: #3B5998;" 
-                                class="flex items-center justify-center h-12 w-12 mr-1 rounded-full fab fill-current text-white text-xl fa-facebook-f"></i>
-                            <i style="background-color: #dd4d39;" 
-                                class="flex items-center justify-center h-12 w-12 mx-1 rounded-full fas fill-current text-white text-xl fa-envelope"></i>
-                            <i style="background-color:#125688" 
-                                class="flex items-center justify-center h-12 w-12 mx-1 rounded-full fab fill-current text-white text-xl fa-instagram"></i>
-                            <i style="background-color:#55ACEE" 
-                                class="flex items-center justify-center h-12 w-12 mx-1 rounded-full fab fill-current text-white text-xl fa-twitter"></i>
+                            <div class="flex items-center justify-center h-7 w-7 mr-1"><img src="/public/img/facebook.svg" alt=""></div>
+                            <div class="flex items-center justify-center h-7 w-7 mx-1"><img src="/public/img/google-gmail.svg" alt=""></div>
+                            <div class="flex items-center justify-center h-7 w-7 mx-1"><img src="/public/img/instagram-icon.svg" alt=""></div>
+                            <div class="flex items-center justify-center h-7 w-7 mx-1"><img src="/public/img/twitter.svg" alt=""></div>
                          </div>
                     </div>
                 <div class="w-full lg:w-1/2 lg:flex lg:px-6">
                     <div class="w-full xl:mb-6 lg:mb-0 lg:w-1/2">
-                        <h2 class="font-bold text-2xl text-gray-900 xl:mb-4">
+                        <h2 class="font-bold text-2xl text-gray-900">
                             Menu Utama
                         </h2>
                         <ul class="text-black-500 text-1xl">
@@ -488,60 +413,18 @@
 <!--Footer Bottom-->
     <div class="" style="background-color: #047857;">
         <div class="container mx-auto px-6 lg:px-20 py-6">
-            <div class="flex justify-center text-gray-500 mb-1">
+            <div class="flex justify-center text-gray-700 mb-1">
                 @ 2021 <span class="font-bold">SewaAC.co.id</span> 2021 All right reserved
-            </div>
-            <div class="flex font-light justify-center text-white-200 text-sm">
-                <p>Design by <span class="font-bold">....</span></p>
             </div>
         </div>
     </div>
- <script>
-    window.addEventListener('scroll', function (){
-        console.log("Scrollin'");
-    });
-     function loop(){
-         elementToShow.forEach(function (element){
-             if(isElementInViewport(element)){
-                 element.classList.add('is-visible');
-             }else{
-                 element.classList.remove('is-visible');
-             }
-         });
 
-         scroll(loop);
-     }
-    
-    var scroll = window.requestAnimationFrame || function(callback){
-        window.setTimeout(callback,1000/60)};
-    var elementsToShow = document.querySelectorAll('.show-on-scroll');
-
-    function loop(){
-        Array.prototype.forEach.call(elementsToShow, function(element){
-            if(isElementInViewposrt(element)){
-                element.classList.add('is-visible');
-            }else{
-                element.classList.remove('is-visible');
-            }
+ <!-- AOS.js -->
+<script>
+        $(function() {
+        AOS.init();
         });
-
-        scroll(loop);
-    }
-
-    function isElementInViewposrt(el){
-        if(typeof jQuery === "function" && el instanceof jQuery){
-            el = el[0];
-        }
-        var rect = el.getBoundingClientRect();
-        return (
-            (rect.top <= 0 && rect.bottom >= 0) 
-            ||
-            (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight)
-            && rect.top <= (window.innerHeight || document.documentElement.clientHeight))
-            || (rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
-        );
-    }
-
- </script> 
+    </script>
 </body>
 </html>
+
