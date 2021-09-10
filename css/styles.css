@@ -10,8 +10,6 @@
     }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Glory:wght@100&display=swap');
-
 @media (min-width : 640px){
 
 }
@@ -75,7 +73,7 @@ html{
 }
 
 .isi-slider img { 
-	width: 730px;
+	width: 750px;
 	height: 450px; 
 	float: left;
 }
@@ -86,26 +84,27 @@ html{
 
 	/*pengaturan durasi lama tampil gambar bisa di atur di bawah ini*/
 	animation-name:slider;
-	animation-duration:16s;
+	animation-duration:10s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count:infinite;
 	-webkit-animation-name:slider;
-	-webkit-animation-duration:16s;
+	-webkit-animation-duration:10s;
 	-webkit-animation-timing-function: ease-in-out;
 	-webkit-animation-iteration-count:infinite;
 	-moz-animation-name:slider;
-	-moz-animation-duration:16s;
+	-moz-animation-duration:10s;
 	-moz-animation-timing-function: ease-in-out;
 	-moz-animation-iteration-count:infinite;
 	-o-animation-name:slider;
-	-o-animation-duration:16s;
+	-o-animation-duration:10s;
 	-o-animation-timing-function: ease-in-out;
 	-o-animation-iteration-count:infinite;
 }
 
 
 /*saat gambar di hover oleh cursor mouse maka berhenti slide*/
-.isi-slider:hover { 
+.isi-slider:hover {
+	cursor: not-allowed; 
 	-webkit-animation-play-state:paused; 
 	-moz-animation-play-state:paused; 
 	-o-animation-play-state:paused; 
