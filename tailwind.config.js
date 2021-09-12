@@ -35,7 +35,8 @@ module.exports = {
 
     extend: {
       backgroundImage: theme => ({
-        'green-pattern' : "url(/public/img/bg-green.png)",
+        'bg-baru' : "url(/public/img/bg-baru.svg)",
+        'bg-orange' : "url(/public/img/background.png)",
       })
     },
   },

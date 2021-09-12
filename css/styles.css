@@ -10,26 +10,6 @@
     }
 }
 
-@media (min-width : 640px){
-
-}
-
-@media (min-width: 768px){
-
-}
-
-@media (min-width: 1024px){
-
-}
-
-@media (min-width: 1280px){
-
-}
-
-@media (min-width: 1536px){
-
-}
-
 .font-Glory{
     font-family: Glory;
 }
@@ -294,4 +274,10 @@ html{
 	100% {
 		left: 0; opacity: 0; 
 	}
+}
+
+.wrapper{
+  display:grid;
+  height:4em;
+  place-items:center
 }
