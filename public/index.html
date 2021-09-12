@@ -44,7 +44,7 @@
 <nav x-data="{show:false}" class="w-full z-10" style="background-color: #FEAA52; position: fixed;">
     <div class="container mx-auto px-3 py-2 lg:px-20 flex items-center justify-between flex-wrap">
         <div class="flex items-center flex-shrink-0 text-green-400 mr-6">
-            <h1 class="font-bold  xl:text-3xl lg:text-3xl md:text-2xl tracking-tight text-white">SewaAC.co.id</h1>
+            <p class="font-bold text-2xl  xl:text-3xl lg:text-3xl tracking-tight text-white">SewaAC.co.id</p>
         </div>
         <div class="block lg:hidden">
             <button @click="show=!show"
@@ -77,18 +77,18 @@
 
 <!--Hero-->
 <section id="beranda">
-<div class="top-0 w-screen h-screen" style="background-image: url(/public/img/bg-baru.png);">
+<div class="top-0 w-screen h-screen bg-cover mx-auto" style="background-image: url(/public/img/bg-baru.png); background-size: cover; background-repeat: no-repeat;">
     <div class="container mx-auto">
-        <div class="2xl:flex xl:flex lg:grid md:grid sm:grid xl:justify-between lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1">
-            <div class="xl:w-1/2 2xl:pt-72 xl:pt-52 md:pt-24 sm:pt-16">
-                <p class="text-white text-md text-center 2xl:text-left xl:text-left md:text-center 2xl:text-5xl xl:text-4xl md:text-3xl sm:text-2xl font-bold leading-tight animate__animated animate__fadeInUp">Penyedia <strong class="text-green-300 filter drop-shadow-lg">Layanan AC</strong> Terbaik <strong class="text-green-300">di Nusantara</strong></p>
-                <p class="text-white text-md text-center pt-3 2xl:pt-7 xl:pt-5 md:pt-5 2xl:mt-2 2xl:text-3xl xl:text-2xl md:text-2xl md:text-center xl:text-left animate__animated animate__fadeInUp">Tetap Nyaman di ruangan Anda, Kami akan memberikan <strong>layanan terbaik</strong> untuk pendingin ruangan Anda</p>
+        <div class="2xl:flex xl:flex lg:grid md:grid grid xl:justify-between lg:grid-cols-1 grid-cols-1 md:grid-cols-1">
+            <div class="xl:w-1/2 2xl:pt-72 xl:pt-10 md:pt-24 sm:pt-16">
+                <p class="text-white text-xl text-center 2xl:text-left xl:text-left md:text-center md:pt-32 2xl:text-5xl xl:text-4xl md:text-3xl sm:text-2xl font-bold leading-tight animate__animated animate__fadeInUp">Penyedia <strong class="text-green-300 filter drop-shadow-lg">Layanan AC</strong> Terbaik <strong class="text-green-300">di Nusantara</strong></p>
+                <p class="text-white text-xl text-center pt-3 2xl:pt-7 xl:pt-5 md:pt-5 2xl:mt-2 2xl:text-3xl xl:text-2xl md:text-2xl md:text-center xl:text-left animate__animated animate__fadeInUp">Tetap Nyaman di ruangan Anda, Kami akan memberikan <strong>layanan terbaik</strong> untuk pendingin ruangan Anda</p>
                 <div class="flex place-content-center pt-2 2xl:pt-14 xl:pt-14 md:pt-4 md:place-content-center xl:place-content-end 2xl:place-content-end mt-4 md:pt-0 animate__animated animate__fadeInUp">
                     <button type="button" class="flex items-center md:text-1xl 2xl:text-2xl xl:text-1xl text-white text-bold rounded-full font-semibold px-8 py-2 mr-4 bg-green-400 hover:bg-green-700">
                     Kunjungi Kami</button>
                 </div>
             </div>
-            <div class="relative flex pt-10 2xl:pt-72 xl:pt-24 md:pt-24">
+            <div class="relative flex pt-10 2xl:pt-72 xl:pt-24 md:pt-42">
                 <img src="/public/img/head.svg" class="inline-photo" style="width: 100%; height: 100%; max-width: fit-content; max-height: fit-content;" alt="">
             </div>
         </div>
@@ -98,16 +98,16 @@
 
 <!--Layanan-->
 <section id="layanan">
-    <h1 class="md:text-2xl xl:text-4xl font-bold text-center md:pt-14 xl:pt-24">Layanan terbaik <strong class="text-green-700">Kami</strong></h1>
+    <p class="text-2xl xl:text-3xl font-bold text-center pt-14 xl:pt-24 pb-10">Layanan terbaik <strong class="text-green-400">Kami</strong></p>
 <div class="flex items-start md:space-x-10">
-    <div class="p-10 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-7">  
+    <div class="p-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-7">  
         <!--Card 1-->
         <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300">
         <div class="rounded overflow-hidden shadow-xl">
           <img class="w-full" src="/public/img/sewa-ac.png">
           <div class="px-6 py-4">
-            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center font-Glory">Sewa Pendingin</div>
-            <p class="text-gray-700 md:text-md xl:text-1xl text-center">
+            <div class="font-bold text-xl xl:text-2xl mb-2 text-center font-Glory">Sewa Pendingin</div>
+            <p class="text-gray-900 text-md xl:text-1xl text-center">
             Kami memberikan solusi pendingin bagi rumah ataupun kantor. Kami memberikan pelayanan berupa pemasangan AC di tempat Anda, cepat dan tepat sesuai kebutuhan Anda.
             </p>
           </div>
@@ -119,8 +119,8 @@
         <div class="rounded overflow-hidden shadow-xl">
           <img class="w-full" src="/public/img/servis-rutin.png">
           <div class="px-6 py-4">
-            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center font-Glory">Servis Rutin</div>
-            <p class="text-gray-700 md:text-md xl:text-1xl text-center">
+            <div class="font-bold text-xl xl:text-2xl mb-2 text-center font-Glory">Servis Rutin</div>
+            <p class="text-gray-900 text-md xl:text-1xl text-center">
             Kami menyediakan pelayanan berupa perawatan rutin, sehingga AC Anda tetap terawat dengan baik dan menjaga AC Anda tetap bersih dari kuman dan debu.
             </p>
           </div>
@@ -132,8 +132,8 @@
         <div class="rounded overflow-hidden shadow-xl">
           <img class="w-full" src="/public/img/servis-pelanggan.png">
           <div class="px-6 py-4">
-            <div class="font-bold md:text-xl xl:text-2xl mb-2 text-center font-Glory">Servis pelanggan</div>
-            <p class="text-gray-700 md:text-base xl:text-1xl text-center">
+            <div class="font-bold text-xl xl:text-2xl mb-2 text-center font-Glory">Servis pelanggan</div>
+            <p class="text-gray-900 text-md xl:text-1xl text-center">
             Kami memberikan pelayanan terbaik 7x24 jam, demi menjaga AC Anda tetap dingin dan sehingga Anda dapat merasa nyaman di rumah ataupun kantor
             </p>
           </div>
@@ -149,11 +149,11 @@
 <div class="grid grid-cols-1 xl:grid-cols-2 md:grid-cols-1 2xl:grid-cols-2 pt-16">
     <div class="grid 2xl:pt-24" style="background-image: url(/public/img/undraw_Relaxing_at_home_re_mror.svg); background-size: cover; height: 31rem;">
         <div>
-        <p class="text-1xl xl:text-2xl text-center font-bold md:pt-32 xl:pt-1 md:p-3">Sesuaikan Produk Dengan Kebutuhan Anda</p>
-        <p class="text-center text-md md:p-2 2xl:text-1xl">Berbagai Variasi produk untuk kebutuhan perusahaan anda</p>
-        <p class="text-center text-md p-1 2xl:text-1xl xl:text-1xl">Single Split | Multi Split | Air Purifer</p>
-        <p class="text-center text-md p-1 2xl:text-1xl xl:text-1xl">VRV Home Series | Multi NX-32</p>
-        <p class="text-center text-md p-1 2xl:text-1xl xl:text-1xl">Sky Air | VRV Control System</p>
+        <p class="text-2xl xl:text-2xl text-center font-bold pt-24 xl:pt-10 md:p-3">Sesuaikan Produk Dengan Kebutuhan Anda</p>
+        <p class="text-center text-xl p-2 2xl:text-1xl">Berbagai Variasi produk untuk kebutuhan perusahaan Anda</p>
+        <p class="text-center text-xl p-1 2xl:text-1xl xl:text-1xl">Single Split | Multi Split | Air Purifer</p>
+        <p class="text-center text-xl p-1 2xl:text-1xl xl:text-1xl">VRV Home Series | Multi NX-32</p>
+        <p class="text-center text-xl p-1 2xl:text-1xl xl:text-1xl">Sky Air | VRV Control System</p>
         </div>
     </div>
     <div>
@@ -170,43 +170,43 @@
 
 <!--keunggulan-->
 <section id="keunggulan">
-<h1 class="text-center text-1xl md:text-2xl xl:text-4xl font-bold md:pt-14 xl:pt-24">Kenapa Memilih Kami</h1>
+<h1 class="text-center text-2xl xl:text-3xl font-bold pt-14 xl:pt-24">Kenapa Memilih Kami</h1>
 <div class="p-16 pr-28 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 xl:gap-10 place-content-center">
     <div data-aos="fade-right" data-aos-duration="3000">
         <img src="/public/img/servis-rutin-2.png" class="pl-24" style="width: 30rem;" alt="">
     </div>
     <div data-aos="fade-left" data-aos-duration="3000">
-        <p class="text-center md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 xl:pt-5">Servis Rutin Tiap Bulan</p>
-        <p class="text-center md:text-justify  2xl:text-left xl:text-left md:text-md xl:text-1xl">Anda tidak perlu lagi hawatir lupa servis tiap bulan, tim kami akan mengingatkan Anda sehingga Ac Anda akan terhindar dari kuman dan debu</p>
+        <p class="text-center text-xl md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 xl:pt-5">Servis Rutin Tiap Bulan</p>
+        <p class="text-center text-xl md:text-justify  2xl:text-left xl:text-left md:text-md xl:text-1xl">Anda tidak perlu lagi hawatir lupa servis tiap bulan, tim kami akan mengingatkan Anda sehingga Ac Anda akan terhindar dari kuman dan debu</p>
     </div>
     <div data-aos="fade-right" data-aos-duration="3000">
         <img src="/public/img/unit-baru.png" class="pl-24" style="width: 25rem;" alt="">
     </div>
     <div data-aos="fade-left" data-aos-duration="3000">
-        <p class="text-center md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Unit Ganti Baru</p>
-        <p class="text-center md:text-justify  2xl:text-left xl:text-left md:text-md xl:text-1xl">Jika unit masaih dalam masa garansi akan kami ganti dengan unit yang baru tidak perlu khawatir dengan biaya tambahan lainnya</p>
+        <p class="text-center text-xl md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Unit Ganti Baru</p>
+        <p class="text-center text-xl md:text-justify  2xl:text-left xl:text-left md:text-md xl:text-1xl">Jika unit masaih dalam masa garansi akan kami ganti dengan unit yang baru tidak perlu khawatir dengan biaya tambahan lainnya</p>
     </div>
     <div data-aos="fade-right" data-aos-duration="3000">
         <img src="/public/img/call-center.png" class="pl-24" style="width: 25rem;" alt="">
     </div>
     <div data-aos="fade-left" data-aos-duration="3000">
-        <p class="text-center md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Bantuan 24/7</p>
-        <p class="text-center md:text-justify 2xl:text-left xl:text-left md:text-md xl:text-1xl">Hubungi kami kapanpun Anda membutuhkan, karena Kami akan selalu ada untuk Anda</p>
+        <p class="text-center text-xl md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Bantuan 24/7</p>
+        <p class="text-center text-xl md:text-justify 2xl:text-left xl:text-left md:text-md xl:text-1xl">Hubungi kami kapanpun Anda membutuhkan, karena Kami akan selalu ada untuk Anda</p>
     </div>
     <div data-aos="fade-right" data-aos-duration="3000">
         <img src="/public/img/garansi.png" class="pl-24" style="width: 25rem;" alt="">
     </div>
     <div data-aos="fade-left" data-aos-duration="3000">
-        <p class="text-center md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3">Garansi AC Dingin</p>
-        <p class="text-center md:text-justify  2xl:text-left xl:text-left md:text-md xl:text-1xl">Tidak hanya unit yang Kami garansikan, tapi Kami menggaransikan AC tetap dingin untuk kenyamanan Anda di ruangan</p>
+        <p class="text-center text-xl md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3">Garansi AC Dingin</p>
+        <p class="text-center text-xl md:text-justify  2xl:text-left xl:text-left md:text-md xl:text-1xl">Tidak hanya unit yang Kami garansikan, tapi Kami menggaransikan AC tetap dingin untuk kenyamanan Anda di ruangan</p>
     </div>
 </div>
 </section>
 
 <!--cabang-->
 <section id="cabang">
-<div class="md:pt-14 xl:pt-24">
-    <span><h1 class="text-center font-bold md:text-2xl xl:text-3xl">Kami Hadir Di Kota-Kota Besar</h1></span>
+<div class="pt-14 xl:pt-16">
+    <span><h1 class="text-center text-2xl font-bold md:text-2xl xl:text-3xl">Kami Hadir Di Kota-Kota Besar</h1></span>
 </div>
 <div class="p-14 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-10">
     <!--Card Jakarta-->
@@ -283,10 +283,10 @@
 <div class="p-10 md:pt-14 xl:pt-24 grid grid-cols-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5">
     <div>
     <div class="p-3">
-        <p class="md:text-2xl xl:text-4xl font-bold text-black text-center">Kontak Kami</p>
-        <p class="md:text-2xl xl:text-3xl font-bold text-green-700 text-center p-2">Alamat</p>
-        <p class="text-center">komp. Ruko 135, No.A6-A7, Jl. Pangeran Jayakarta, RT.7/RW.7, Mangga Dua Sel., Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibu Kota Jakarta 10730</p>
-        <p class="font-bold text-center p-3">Punya Pertanyaan silahan Hubungi Kami</p>
+        <p class="text-2xl md:text-2xl xl:text-4xl font-bold text-black text-center">Kontak Kami</p>
+        <p class="text-xl md:text-2xl xl:text-2xl font-bold text-green-700 text-center p-2">Alamat</p>
+        <p class="text-center text-md">komp. Ruko 135, No.A6-A7, Jl. Pangeran Jayakarta, RT.7/RW.7, Mangga Dua Sel., Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibu Kota Jakarta 10730</p>
+        <p class="font-bold text-center p-3 text-xl">Punya Pertanyaan silahan Hubungi Kami</p>
     </div>
     <form class="bg-white px-8 pt-6 pb-8 mb-4">
             <div class="mb-4">
@@ -329,7 +329,7 @@
                     </div>
                 <div class="w-full lg:w-1/2 lg:flex lg:px-6">
                     <div class="w-full xl:mb-6 lg:mb-0 lg:w-1/2">
-                        <h2 class="font-bold text-2xl xl:mb-4 text-gray-900">
+                        <h2 class="font-bold text-xl xl:mb-4 text-gray-900">
                             Menu Utama
                         </h2>
                         <ul class="text-black-500 text-1xl">
@@ -342,7 +342,7 @@
                         </ul>
                     </div>
                     <div class="w-full xl:mb-6 lg:mb-0 lg:w-1/2">
-                        <h2 class="font-bold text-gray-900 xl:mb-4 text-2xl">Layanan dan Produk</h2>
+                        <h2 class="font-bold text-gray-900 xl:mb-4 text-xl">Layanan dan Produk</h2>
                         <ul class="text-black-500 text-1xl">
                             <li class="pt-1 pb-2">Sewa AC</li>
                             <li class="pt-1 pb-2">Servis dan Perawatan</li>
