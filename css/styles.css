@@ -283,6 +283,8 @@ h2{
 
 .bg-produk{
 	background-image: url('/public/img/undraw_Relaxing_at_home_re_mror.png');
+	height:100%;
+	width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
@@ -330,7 +332,7 @@ h2{
 	
 }
 
-#proparallax .hover {
+#proparallax img.hover {
 	cursor: not-allowed; 
 	-webkit-animation-play-state:paused; 
 	-moz-animation-play-state:paused; 
@@ -459,11 +461,51 @@ h2{
 	}
 }
 
+@keyframes proparallax_four{
+	0%{
+		opacity:0;
+	}
+	61.10%{
+		opacity: 0;
+	}
+	61.11%{
+		width: 50rem;
+		height: 0rem;
+		left: 0rem;
+		opacity:1;
+	}
+	66.67%{
+		width:0rem;
+		height:37.5rem;
+		left:50rem;
+		opacity:0;
+	}
+	77.78%{
+		width:50rem;
+		height:37.5rem;
+	}
+	78.71%{
+		height:0rem;
+		width:0rem;
+		opacity:1;
+	}
+	80.27%{
+		opacity:0;
+	}
+	100%{
+		width:50rem;
+		right:0rem;
+		left:0rem;
+		height:37.5rem;
+		opacity:1;
+	}
+}
+
 #proparallax img.one{
 	animation-name: proparallax_one;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-	animation-duration: 18s;
+	animation-duration: 20s;
 	animation-direction: forwards;
 	object-fit: cover;
 }
@@ -472,7 +514,7 @@ h2{
 	animation-name: proparallax_two;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-	animation-duration: 18s;
+	animation-duration: 20s;
 	animation-direction: forwards;
 	object-fit:cover;
 }
@@ -481,7 +523,16 @@ h2{
 	animation-name: proparallax_theree;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-	animation-duration: 18s;
+	animation-duration: 20s;
+	animation-direction: forwards;
+	object-fit: cover;
+}
+
+#proparallax img.four{
+	animation-name: proparallax_four;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-duration: 20s;
 	animation-direction: forwards;
 	object-fit: cover;
 }
