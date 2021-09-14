@@ -65,7 +65,6 @@ h2{
 	position: absolute; 
 	width:3900px;  
 
-	/*pengaturan durasi lama tampil gambar bisa di atur di bawah ini*/
 	animation-name:slider;
 	animation-duration:10s;
 	animation-timing-function: ease-in-out;
@@ -85,7 +84,6 @@ h2{
 }
 
 
-/*saat gambar di hover oleh cursor mouse maka berhenti slide*/
 .isi-slider:hover {
 	cursor: not-allowed; 
 	-webkit-animation-play-state:paused; 
@@ -282,6 +280,15 @@ h2{
   height:4em;
   place-items:center
 }
+
+.bg-produk{
+	background-image: url('/public/img/undraw_Relaxing_at_home_re_mror.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+
 /*Slider*/
 
 /* body{
@@ -293,30 +300,42 @@ h2{
 	background color: whitesmoke;
 } */
 
-/* .container{
+
+.container-proparallax{
+	
 	width: 100%;
 	padding-right: 15px;
-	padding-left:15px;
+	padding-left: 15px;
+	padding-top: 15px;
 	margin-right: auto;
 	margin-left: auto;
 	max-width: 800px;
-} */
+}
 
 #proparallax{
 	display: block;
 	position: relative;
 	overflow: hidden;
-	min-height: 37.5rem;
-	border: 10px solid black;
-	box-shadow: 0px 8px 10px 8px grey;
+	min-height: 30rem;
+	border: 2px solid orange;
+	align center: center;
 }
 
 #proparallax img{
 	position: absolute;
-	width: 50rem;
-	height: 37.5rem;
+	width: full;
+	height: 30rem;
 	overflow: hidden;
 	object-fit: cover;
+	
+}
+
+#proparallax .hover {
+	cursor: not-allowed; 
+	-webkit-animation-play-state:paused; 
+	-moz-animation-play-state:paused; 
+	-o-animation-play-state:paused; 
+	animation-play-state:paused; }
 }
 
 @keyframes proparallax_one{
