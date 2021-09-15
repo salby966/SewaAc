@@ -41,7 +41,7 @@
 
 <!--Nav-->
 <!--Nav-->
-<nav x-data="{show:false}" class="z-10" style="background-color: #FEAA52; position: fixed; height: fit-content; width: 100%;">
+<nav x-data="{show:false}" class="w-full z-10" style="background-color: #FEAA52; position: fixed; height: fit-content; width: 100%;">
     <div class="container mx-auto px-3 py-2 lg:px-20 flex items-center justify-between flex-wrap">
         <div class="flex items-center flex-shrink-0 text-green-400 mr-6">
             <p class="font-bold text-2xl  xl:text-3xl lg:text-3xl tracking-tight text-white">SewaAC.co.id</p>
@@ -77,7 +77,7 @@
 
 <!--Hero-->
 <section id="beranda">
-<div class="bg-opacity-25" style="background-image: url(/public/img/bg-baru.png); background-size: cover; background-repeat: no-repeat; height: 100%; width: 100%;">
+<div class="top-0 bg-cover bg-opacity-25 w-full h-screen" style="background-image: url(/public/img/bg-baru.png); background-size: cover; background-repeat: no-repeat;">
     <div class="container mx-auto">
         <div class="2xl:flex xl:flex lg:grid md:grid grid xl:justify-between lg:grid-cols-1 grid-cols-1 md:grid-cols-1">
             <div class="xl:w-1/2 2xl:pt-72 xl:pt-10 pt-32 md:pt-24 sm:pt-16">
@@ -114,6 +114,8 @@
         </div>
         </div>
 
+
+        
         <!--Card 2-->
         <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300">
         <div class="rounded overflow-hidden shadow-xl">
@@ -146,9 +148,9 @@
 <!--produk-->
 <section id="produk">
     <div class="grid grid-cols-1 xl:grid-cols-2 md:grid-cols-2 2xl:grid-cols-2 pt-10">
-        <div class="grid mx-auto">
+        <div class="grid mx-auto w-full h-full bg-cover" style="background-image:url(/public/img/undraw_Relaxing_at_home_re_mror.png);width: fit-content; height: min-content;">
             <ul class="list-inside">
-                <p class="text-xl xl:text-2xl text-center font-bold xl:pt-10 pt-5">Sesuaikan Produk Dengan Kebutuhan Anda</p>
+                <p class="text-xl xl:text-2xl text-center font-bold xl:pt-10 pt-5 md:pt-40 xl:pt-52">Sesuaikan Produk Dengan Kebutuhan Anda</p>
                 <p class="text-center text-md 2xl:text-1xl pt-5">Berbagai Variasi produk untuk kebutuhan perusahaan Anda</p>
                 <li class=" text-center text-sm pt-2">Single Split | Multi Split | Air Purifer</li>
                 <li class=" text-center text-sm pt-2">VRV Home Series | Multi NX-32</li>
@@ -165,37 +167,37 @@
     </div>
 </section>
 
-<!--keunggulan-->
+<!-- keunggulan -->
 <section id="keunggulan">
 <h1 class="text-center text-xl xl:text-3xl font-bold pt-14 xl:pt-24">Kenapa Memilih Kami</h1>
-<div class="p-10 pr-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 xl:gap-10 place-content-center">
+<div class="p-16 pr-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 xl:gap-10 place-content-center">
     <div data-aos="fade-right" data-aos-duration="1000">
         <img src="/public/img/servis-rutin-2.png" class="place-content-center xl:pl-24" style="width: 30rem;" alt="">
     </div>
     <div data-aos="fade-left" data-aos-duration="1000">
-        <p class="text-left text-md md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 xl:pt-5">Servis Rutin Tiap Bulan</p>
-        <p class="text-left text-sm md:text-justify  2xl:text-left xl:text-left md:text-md xl:text-1xl">Anda tidak perlu lagi khawatir lupa servis tiap bulan, tim kami akan mengingatkan Anda sehingga AC Anda akan terhindar dari kuman dan debu</p>
+        <p class="text-left text-md text-center md:text-center  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 xl:pt-5">Servis Rutin Tiap Bulan</p>
+        <p class="text-left text-sm text-center md:text-center  2xl:text-left xl:text-left md:text-md xl:text-1xl">Anda tidak perlu lagi khawatir lupa servis tiap bulan, tim kami akan mengingatkan Anda sehingga AC Anda akan terhindar dari kuman dan debu</p>
     </div>
     <div data-aos="fade-right" data-aos-duration="1000">
         <img src="/public/img/unit-baru.png" class="place-content-center xl:pl-24" style="width: 25rem;" alt="">
     </div>
     <div data-aos="fade-left" data-aos-duration="1000">
-        <p class="text-left text-md md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Unit Ganti Baru</p>
-        <p class="text-left text-sm md:text-justify  2xl:text-left xl:text-left md:text-md xl:text-1xl">Jika unit masih dalam masa garansi akan kami ganti dengan unit yang baru tidak perlu khawatir dengan biaya tambahan lainnya</p>
+        <p class="text-left text-md text-center md:text-center  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Unit Ganti Baru</p>
+        <p class="text-left text-sm text-center md:text-center  2xl:text-left xl:text-left md:text-md xl:text-1xl">Jika unit masih dalam masa garansi akan kami ganti dengan unit yang baru tidak perlu khawatir dengan biaya tambahan lainnya</p>
     </div>
     <div data-aos="fade-right" data-aos-duration="1000">
         <img src="/public/img/call-center.png" class="place-content-center xl:pl-24" style="width: 25rem;" alt="">
     </div>
     <div data-aos="fade-left" data-aos-duration="1000">
-        <p class="text-left text-md md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Bantuan 24/7</p>
-        <p class="text-left text-sm md:text-justify 2xl:text-left xl:text-left md:text-md xl:text-1xl">Hubungi kami kapanpun Anda membutuhkan, karena Kami akan selalu ada untuk Anda</p>
+        <p class="text-left text-md text-center md:text-center  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Bantuan 24/7</p>
+        <p class="text-left text-sm text-center md:text-center 2xl:text-left xl:text-left md:text-md xl:text-1xl">Hubungi kami kapanpun Anda membutuhkan, karena Kami akan selalu ada untuk Anda</p>
     </div>
     <div data-aos="fade-right" data-aos-duration="1000">
         <img src="/public/img/garansi.png" class="place-content-center xl:pl-24" style="width: 25rem;" alt="">
     </div>
     <div data-aos="fade-left" data-aos-duration="1000">
-        <p class="text-left text-md md:text-left  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Garansi AC Dingin</p>
-        <p class="text-left text-sm md:text-justify  2xl:text-left xl:text-left md:text-md xl:text-1xl">Tidak hanya unit yang Kami garansikan, tapi Kami menggaransikan AC tetap dingin untuk kenyamanan Anda di ruangan</p>
+        <p class="text-left text-md text-center md:text-center  2xl:text-left xl:text-left md:text-1xl xl:text-2xl font-bold pb-3 pt-5">Garansi AC Dingin</p>
+        <p class="text-left text-sm text-center md:text-center  2xl:text-left xl:text-left md:text-md xl:text-1xl">Tidak hanya unit yang Kami garansikan, tapi Kami menggaransikan AC tetap dingin untuk kenyamanan Anda di ruangan</p>
     </div>
 </div>
 </section>
